@@ -1,0 +1,140 @@
+<!--
+  Copyright (C) 2026  Alejandro Javier Palau <alepalau@codice.net.ar>
+
+  Este programa es software libre: puedes redistribuirlo y/o modificarlo
+  bajo los términos de la Licencia Pública General GNU publicada por
+  la Free Software Foundation, ya sea la versión 3 de la Licencia, o
+  (a tu elección) cualquier versión posterior.
+
+  Este programa se distribuye con la esperanza de que sea útil,
+  pero SIN NINGUNA GARANTÍA; incluso sin la garantía implícita de
+  COMERCIALIZACIÓN o APTITUD PARA UN PROPÓSITO PARTICULAR.
+  Para más detalles, consulta la Licencia Pública General GNU.
+
+  Deberías haber recibido una copia de la Licencia Pública General GNU
+  junto con este programa. Si no, consulta <https://gnu.org>.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@page {
+  size: A4;
+  margin: 110px 40px 100px 40px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("assets/fondoPDF.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  -weasyprint-background-opacity: 0.15;
+}
+header {
+  position: fixed;
+  top: -90px;
+  left: 0px;
+  right: 0px;
+  border-bottom: 2px solid #bbb;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header img {
+  height: 90px;
+}
+footer {
+  position: fixed;
+  bottom: -85px;
+  left: 40px;
+  right: 40px;
+  border-top: 2px solid #bbb;
+  text-align: center;
+  padding-top: 6px;
+}
+footer img {
+  height: 90px;
+  margin-top: 4px;
+}
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+.fecha-linea {
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.fila {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.total {
+  border-top: 1px solid black;
+  margin-top: 10px;
+  padding-top: 5px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="assets/membrete.png">
+</header>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/desarrollado.png">
+</footer>
+
+<h1>S.A.T.R. - REPORTE DE TURNO</h1>
+<p class="fecha-linea">Fecha: {{fecha}}</p>
+
+<p><b>Chofer:</b> {{chofer}}</p>
+<p><b>Patente:</b> {{patente}}</p>
+<br>
+<div class="fila">
+  <span>RECAUDACIÓN TOTAL:</span>
+  <span>$ {{rec}}</span>
+</div>
+<div class="fila">
+  <span>EFECTIVO:</span>
+  <span>$ {{efectivo}}</span>
+</div>
+<div class="fila">
+  <span>TRANSFERENCIA:</span>
+  <span>$ {{transferencia}}</span>
+</div>
+<div class="fila">
+  <span>COMISIÓN AGENCIA:</span>
+  <span>$ {{c_age}}</span>
+</div>
+<div class="fila">
+  <span>TOTAL DE GASTOS:</span>
+  <span>$ {{g_var}}</span>
+</div>
+<div class="fila">
+  <span>GANANCIA CHOFER:</span>
+  <span>$ {{g_cho}}</span>
+</div>
+<div class="fila total">
+  <span>NETO TITULAR:</span>
+  <span>$ {{neto}}</span>
+</div>
+<p><b>KILÓMETROS RECORRIDOS:</b> {{kms}}</p>
+<p><b>RENDIMIENTO POR KM:</b> $ {{rendimiento}}</p>
+<h3>Detalle de Viajes</h3>
+<p>{{detalle_viajes}}</p>
+<h3>Detalle de Gastos</h3>
+<p>{{detalle_gastos}}</p>
+
+</body>
+</html>

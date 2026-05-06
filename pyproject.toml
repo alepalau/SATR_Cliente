@@ -1,0 +1,23 @@
+[tool.flet]
+color = "#000000"
+dark_color = "#000000"
+app_name = "SATR Cliente"
+app_version = "1.0.0"
+org = "com.codice.satr"
+description = "Administración de turnos de taxi y remis"
+module = "SATR"
+dependencies = ["fpdf2"]
+
+[tool.flet.android.permission]
+"android.permission.INTERNET" = true
+"android.permission.CALL_PHONE" = true
+"android.permission.WRITE_EXTERNAL_STORAGE" = true
+"android.permission.READ_EXTERNAL_STORAGE" = true
+
+[tool.flet.android.manifest_application]
+usesCleartextTraffic = "true"
+
+[tool.flet.android.manifest_queries.intent]
+"tel" = {action = "android.intent.action.VIEW", data_scheme = "tel"}
+"http" = {action = "android.intent.action.VIEW", data_scheme = "http"}
+"https" = {action = "android.intent.action.VIEW", data_scheme = "https"}
